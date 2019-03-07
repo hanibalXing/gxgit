@@ -23,8 +23,9 @@ public class WordCountTopologyLocal {
         //构建config对象啦啦啦123
         Config conf=new Config();
         conf.setDebug(true);
-        conf.setNumWorkers(2);
         conf.setMessageTimeoutSecs(5);
+        conf.setNumWorkers(2);
+
 
         LocalCluster cluster=new LocalCluster();
         cluster.submitTopology("WordCountTopologyLocal", conf, builder.createTopology());
