@@ -20,7 +20,7 @@ public class WordCountTopologyLocal {
         builder.setSpout("WordLineSpout",new WordLineSpout());
         builder.setBolt("SplitBolt",new SplitBolt(), 3).localOrShuffleGrouping("WordLineSpout");
         builder.setBolt("CountBolt",new CountBolt(), 1).globalGrouping("SplitBolt");
-        //构建config对象
+        //构建config对象123
         Config conf=new Config();
         conf.setDebug(true);
         conf.setNumWorkers(2);
