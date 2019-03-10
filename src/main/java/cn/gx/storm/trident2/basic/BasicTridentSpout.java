@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * @author gx
  * @ClassName: BasicTridentSpout
- * @Description: 123类作描述123123
+ * @Description: 类描述
  * @date 2019/3/10 14:35
  * @Version: 1.0
  * @since
