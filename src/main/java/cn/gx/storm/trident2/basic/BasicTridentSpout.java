@@ -1,6 +1,5 @@
 package cn.gx.storm.trident2.basic;
 
-import clojure.lang.IFn;
 import org.apache.storm.Config;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.trident.operation.TridentCollector;
@@ -19,7 +18,7 @@ import java.util.Map;
 /**
  * @author gx
  * @ClassName: BasicTridentSpout
- * @Description: 类作用描述
+ * @Description: 123类作用描述
  * @date 2019/3/10 14:35
  * @Version: 1.0
  * @since
