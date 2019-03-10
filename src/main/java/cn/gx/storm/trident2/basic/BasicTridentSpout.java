@@ -19,7 +19,7 @@ import java.util.Map;
 /**
  * @author gx
  * @ClassName: BasicTridentSpout
- * @Description: java类作用描述
+ * @Description: 类作用描述
  * @date 2019/3/10 14:35
  * @Version: 1.0
  * @since
