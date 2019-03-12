@@ -28,7 +28,7 @@ public class RandomStringSpout extends BaseRichSpout {
 	private SpoutOutputCollector collector;
 
 	public RandomStringSpout(){
-		map.put(0,"gxx");
+		map.put(0,"gx");
 		map.put(1,"gxx");
 		map.put(2,"gxxx");
 		map.put(3,"gxxxx");
