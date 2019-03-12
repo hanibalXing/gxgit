@@ -4,3 +4,6 @@
 *.project
 /bin/
 *.iml
+/.idea/vcs.xml
+/.idea/workspace.xml
+/logs/
