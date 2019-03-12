@@ -11,6 +11,7 @@ import org.apache.storm.tuple.Values;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -37,14 +38,15 @@ public class OpaqueTridentEmitter implements IOpaquePartitionedTridentSpout.Emit
     public MetaData emitPartitionBatch(TransactionAttempt tx, TridentCollector collector,
                                        Partition partition, MetaData lastMeta)
     {
+        new ArrayList<>();
         LOG.warn("txID:{},partition:{},lastMeta:{},taskID:{}", tx.getTransactionId(), partition, lastMeta, context.getThisTaskId());
         final MetaData metaData;
         if (lastMeta == null)
         {
-            metaData = new MetaData(0, 5);
+            metaData = new MetaData(0, 3);
         } else
         {
-            metaData = new MetaData(lastMeta.getEnd(), lastMeta.getEnd() + 5);
+            metaData = new MetaData(lastMeta.getEnd(), lastMeta.getEnd() + 3);
         }
         LOG.info("Create the new lastMeta:{} in taskID:{}", metaData, context.getThisTaskId());
         List<Integer> data = SOURCES.get(partition.getId());

@@ -49,10 +49,10 @@ public class CallLogTrident {
                 .peek(tridentTuple -> LOG.info("{}{}",tridentTuple.getFields(),tridentTuple));
 
         //按呼叫人和被呼叫人group,按个数count 类似group by(xx) count(yy)
-        tredent.newStream("telephon-stats", spout)
+        tredent.newStream("telephon-state", spout)
                 .shuffle()
                 .groupBy(new Fields("caller","callee"))
-                .aggregate(new Count(),new Fields("stats"))
+                .aggregate(new Count(),new Fields("state"))
                 .parallelismHint(5)
                 //.newValuesStream()
                 .peek(tridentTuple -> LOG.info("{}{}",tridentTuple.getFields(),tridentTuple));
