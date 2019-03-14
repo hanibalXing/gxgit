@@ -8,10 +8,7 @@ import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Values;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import static cn.gx.storm.utils.Runner.runThenStop;
-
-
 public class JoinTrident {
 	private final static Logger LOG = LoggerFactory.getLogger(JoinTrident.class);
 
@@ -38,7 +35,7 @@ public class JoinTrident {
 		//.peek(input -> LOG.info("1 {}-{}", input.getFields(), input));
 		Stream s2 = topology.newStream("test2", spout2).parallelismHint(1);
 		//.peek(input -> LOG.info("2 {}-{}", input.getFields(), input));
-
+		//仅限于同一个batch
 		topology.join(s1, new Fields("a"), s2, new Fields("x"), new Fields("d", "e", "f", "g"))
 				.peek(input -> LOG.info("3 {}-{}", input.getFields(), input));
 
